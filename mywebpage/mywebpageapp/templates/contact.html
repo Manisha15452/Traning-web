@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+
+
+* {
+  box-sizing: border-box;
+}
+
+/* Style inputs */
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #ccc;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+    /* Style the container/contact section */
+.contact-container {
+  border-radius: 5px;
+  background-color: #4287f5;
+  padding: 50px;
+}
+
+.container-fluid {
+width:100%;
+padding : 0px;
+margin: 9px;
+}
+}
+
+    @media only screen and (max-device-width: 480px) {
+	.row .col.s6 {
+	width: 100%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+	}
+	div.side.col{
+	padding:0rem;
+	}
+	.mapDiv {
+	.row .col.s6 {
+	width: 100%;
+	margin-left: auto;
+	left: auto;
+	right: auto;
+	}
+	}
+</style>
+ <h2 class="text-center">CONTACT-US</h2>
+<div class="main-container">
+<div class="container-fluid bg-grey">
+    <div class="contact-container">
+      <div class="row">
+        <div class="col-sm-8 form-group-contact-container">
+<form method = "Post">
+          {% csrf_token %}
+<table>
+          {{form.as_p}}
+</table>
+  <button type="submit">Submit</button>
+</form>
+
+          <!--input class="form-control" id="First_Name" name="First_Name" placeholder="First_Name" type="text" rows="1"required>
+        </div>
+        <div class="col-sm-6 form-group-contact-container">
+          <input class="form-control" id="Last_Name" name="Last_Name" placeholder="Last_Name" type="text" rows="1"required>
+        </div>
+        <div class="col-sm-6 form-group-contact-container">
+          <input class="form-control" id="Email" name="Email" placeholder="Email" type="Email" rows="1" required>
+        </div>
+        <div class="col-sm-6 form-group-contact-container">
+          <input class="form-control" id="Phone" name="Phone" placeholder="Phone" type="Phone" rows="1" required>
+        </div>
+      <div class="col-sm-6 form-group-contact-container">
+          <input class="form-control" id="Address" name="Address" placeholder="Address" type="Address" rows="1" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="Comments" name="Comments" placeholder="Comment" rows="5"></textarea><br>-->
+            <div class="mapDiv">
+	<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1206.4757963005231!2d-0.154311!3d52.787181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe767bf79d377b61f!2sGurkha+Oven!5e0!3m2!1sen!2sin!4v1530010963618" width="900" height="570" frameborder="0" style="border:0" allowfullscreen></iframe>-->
+	<iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15228.793452979293!2d78.548992!3d17.4022656!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1551365983318" width="900" height="480" frameborder="0" style="border:0" allowfullscreen></iframe>
+	</div>
+
+        </div>
+
+       <div class="col-sm-4 form-group-contact-container">
+           <table style="width:300px; border:1;">
+               <tr>
+               <td>{% for s in details %}</td>
+               <tr>
+               <tr><th>Firstname:</th><td> {{s.First_Name}}</td></tr>
+               <tr><th>Lastname:</th><td> {{s.Last_Name}}</td></tr>
+               <tr><th>Email:</th><td> {{s.Email}}</td></tr>
+               <tr><th>Phone Number:</th><td> {{s.Phone_number}}</td></tr>
+               <tr><th>Address:</th><td> {{s.Address}}</td></tr>
+               <tr><th>Comment:</th><td> {{s.Comment}}</td></tr>
+           </tr>
+               {% endfor %}
+           </tr>
+
+           </table>
+
+       </div>
+      </div></div></div>
+</div>
+{% endblock %}

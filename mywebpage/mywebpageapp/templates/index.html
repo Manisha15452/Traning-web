@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.jumbotron {
+align:center;
+background-color: #f47f09;}
+h1   {color: blue;}
+
+</style>
+<p><marquee><i>This is one of the gate way to you and your career</i></marquee></p>
+
+<div class="container">
+  <div class="jumbotron">
+    <h1>Welcome to the Sunera Traning!</h1>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+    {% else %}
+        <h2>Register or Login if you'd like to</h2>
+    {% endif %}
+
+  </div>
+    <img src="https://imarticus.org/wp-content/uploads/2017/02/online-courses.jpg" class="attachment- size- wp-post-image" alt="Education Landing Page" srcset="https://imarticus.org/wp-content/uploads/2017/02/online-courses.jpg" sizes="(max-width: 980px) 100vw, 980px" width="100%" height="351">
+    <p><font color="black">Hello, and welcome to the Sunera Tech Site! This site is a treasure trove of free resources for students, beginning professionals, and anyone else who wants to improve his or her score on a standardized test.</font></p>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,20 @@
+[0;1;32m●[0m mysql.service - LSB: Start and stop the mysql database server daemon
+   Loaded: loaded (/etc/init.d/mysql; bad; vendor preset: enabled)
+   Active: [0;1;32mactive (running)[0m since Wed 2019-07-10 18:53:20 IST; 12min ago
+     Docs: man:systemd-sysv-generator(8)
+ Main PID: 980 (code=exited, status=0/SUCCESS)
+   CGroup: /system.slice/mysql.service
+           ├─9819 /bin/bash /usr/bin/mysqld_safe
+           ├─9963 /usr/sbin/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib/mysql/plugin --user=mysql --skip-log-error --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/run/mysqld/mysqld.sock --port=3306
+           └─9964 logger -t mysqld -p daemon error
+
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.db                                           OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.event                                        OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.func                                         OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.gtid_slave_pos                               OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.help_category                                OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.help_keyword                                 OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.help_relation                                OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.help_topic                                   OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10015]: [0;1;39mmysql.host                                         OK[0m
+Jul 10 18:53:21 manisha /etc/mysql/debian-start[10068]: Triggering myisam-recover for all MyISAM tables and aria-recover for all Aria tables

@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+.jumbotron {
+align:center;
+background-color: #f47f09;}
+h1   {color: blue;}
+p    {color: red;}
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+.container {
+  padding: 16px;
+
+}
+
+button {
+    width: 50%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+</style>
+<p><marquee><i>Login and then You will experience the Programming facilities</i></marquee></p>
+  <div class="container" style="">
+    <div class="jumbotron">
+      <h2>Login here :</h2>
+
+<form method="post" action="{% url 'user_login' %}">
+          {% csrf_token %}
+          {# A more "HTML" way of creating the login form#}
+          <label for="username">Username:</label>
+          <input id="username" type="text" name="username" placeholder="username">
+            <br>
+          <label for="password">Password:</label>
+          <input id="password" type="password" name="password" placeholder="password">
+            <br>
+     <input type="submit" name="" value="Login">
+    <br>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  <br>
+
+  <div class="container" style="background-color:black">
+    <button type="button" class="cancelbtn">Cancel</button>s
+    <span style="color:white" class="psw">Forgot <a href="#">password?</a></span>
+  </div>
+</form>
+
+</div>
+  </div>
+{% endblock %}
